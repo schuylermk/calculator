@@ -3,6 +3,7 @@
 // Get value of button that was pressed
 
 const calculator = document.querySelector('.calculator');
+const display = calculator.querySelector('input');
 const keys = calculator.querySelector('.keypad');
 
 keys.addEventListener('click', e => {
@@ -39,7 +40,9 @@ keys.addEventListener('click', e => {
 
 // Append first number (operand) to the display
 function displayOperand(e) {
-  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+  const key = document.querySelector(`.key[value="${e.target.value}"]`)
+  const display = document.querySelector(`.display[value="${e.target.value}"]`)
+  display.innerHTML()
 }
 
 
