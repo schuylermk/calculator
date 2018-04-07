@@ -7,7 +7,7 @@ header {
   font-size: 1.25rem;
   margin: 1rem; }
 
-.container, .container .keypad .key, .container .display {
+.calculator, .calculator .keypad .key, .calculator .display {
   border: 2px solid grey;
   border-radius: 8px;
   display: grid;
@@ -15,26 +15,26 @@ header {
   justify-content: center;
   margin: 1rem;
   width: 360px; }
-  .container .keypad, .container .keypad .key .keypad {
+  .calculator .keypad, .calculator .keypad .key .keypad {
     display: grid;
     grid-gap: 12px;
     grid-template-columns: repeat(4, 1fr);
     height: 398px;
     margin: 0 auto;
     width: 316px; }
-    .container .keypad .key {
+    .calculator .keypad .key {
       height: 70px;
       margin: 0;
       width: 70px; }
-    .container .keypad .key[data-action="add"] {
+    .calculator .keypad .key[data-action="add"] {
       height: 152px;
       grid-column: 4/5;
       grid-row: 4/6; }
-  .container .display, .container .keypad .key .display {
+  .calculator .display, .calculator .keypad .key .display {
     height: 120px;
     margin: 20px 20px 0 20px;
     width: 320px; }
-    .container .display #textarea {
+    .calculator .display #textarea {
       text-align: right;
       width: 300px; }
 

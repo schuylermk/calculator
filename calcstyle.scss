@@ -9,7 +9,7 @@
     margin: 1rem;
   }
 
-  .container {
+  .calculator {
     border: 2px solid grey;
     border-radius: 8px;
     display: grid;
@@ -27,7 +27,7 @@
       width: 316px;
 
       .key {
-        @extend .container;
+        @extend .calculator;
         height: 70px;
         margin: 0;
         width: 70px;
@@ -41,7 +41,7 @@
     }  
     
     .display {
-      @extend .container;
+      @extend .calculator;
       height: 120px;
       margin: 20px 20px 0 20px;
       width: 320px;

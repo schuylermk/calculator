@@ -1,29 +1,48 @@
 "use strict";
 
-const calculator = document.querySelector('.calculator')
-const keys = calculator.querySelector('.keypad')
+// Get value of button that was pressed
 
-// Get value of button that was 'pressed'
+const calculator = document.querySelector('.calculator');
+const keys = calculator.querySelector('.keypad');
+
 keys.addEventListener('click', e => {
-  if (e.target.matches('input')) {
-    console.log(e.target);
+  const key = e.target;
+  const action = key.dataset.action;
+
+  // Get type of key pressed
+  
+  if (!action) {
+    console.log(e.target.value)
   }
-})
-
-// window.addEventListener('keydown', function(e) {
-//   console.log(e);
-// });
-
-// window.addEventListener('click', function(e) {
-//   console.log(e);
-// });
-
-// function getInput(e) {
-//   key = document.querySelector(`input[data-key="${e.keyCode}"]`);
-//   console.log(key);
-// }
+  if (action === 'add') {
+    console.log('...plus...')
+  }
+  if (action === 'subtract') {
+    console.log('...minus...')
+  }
+  if (action === 'multiply') {
+    console.log('...times...')
+  }
+  if (action === 'divide') {
+    console.log('...divided by...')
+  }
+  if (action === 'percent') {
+    console.log('...percent of...')
+  }
+  if (action === 'calculate') {
+    console.log('...equals...')  
+  }
+  if (action === 'clear') {
+    console.log('Memory cleared!')  
+  }
+});
 
 // Append first number (operand) to the display
+function displayOperand(e) {
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+}
+
+
 
 
 // Set operator (and possibly append previous operand(s) to smaller, upper display)
@@ -35,3 +54,6 @@ keys.addEventListener('click', e => {
                 //   _by pressing new operator (with respect to OoO)
 // CALCULATE result {
               //     ¯by pressing equals sign
+
+window.addEventListener('keydown', displayOperand);              
+window.addEventListener('click', displayOperand);              
