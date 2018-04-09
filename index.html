@@ -12,29 +12,27 @@
   <h1>Calculator – CSS Grid &amp; ES6</h1>
 </header>
 <div class="calculator">
-  <div class="display">
-    <input type="text" name="display" id="textarea">
-  </div>
+  <div class="display">0</div>
   <div class="keypad">
-    <input type="button" class="key operator" value="%" data-key=""   data-action="percent" >
-    <input type="button" class="key operator" value="√" data-key=""   data-action="sqroot">
-    <input type="button" class="key operator" value="÷" data-key=""   data-action="divide">
-    <input type="button" class="key clear"    value="CL"              data-action="clear" >
-    <input type="button" class="key number"   value="7" data-key="56">
-    <input type="button" class="key number"   value="8" data-key="57">
-    <input type="button" class="key number"   value="9" data-key="58">
-    <input type="button" class="key operator" value="×" data-key=""   data-action="multiply">
-    <input type="button" class="key number"   value="4" data-key="53">
-    <input type="button" class="key number"   value="5" data-key="54">
-    <input type="button" class="key number"   value="6" data-key="55">
-    <input type="button" class="key operator" value="−" data-key="173"data-action="subtract">
-    <input type="button" class="key number"   value="1" data-key="49">
-    <input type="button" class="key number"   value="2" data-key="50">
-    <input type="button" class="key number"   value="3" data-key="51">
-    <input type="button" class="key number"   value="0" data-key="48">
-    <input type="button" class="key number"   value="." data-key="190"data-action="decimal">
-    <input type="button" class="key equal"    value="=" data-key="61" data-action="calculate">
-    <input type="button" class="key operator" value="+" data-key="43" data-action="add">
+    <button class="key--operator" data-action="sqroot">√</button>
+    <button class="key--operator" data-action="percent">%</button>
+    <button class="key--operator" data-action="divide">÷</button>
+    <button data-action="clear">AC</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button class="key--operator" data-action="multiply">&times;</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button class="key--operator" data-action="subtract">-</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>0</button>
+    <button data-action="decimal">.</button>
+    <button class="key--equal" data-action="calculate">=</button>
+    <button class="key--operator" data-action="add">+</button>
   </div>
 </div>
 </body>

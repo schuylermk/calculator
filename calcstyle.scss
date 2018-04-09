@@ -1,3 +1,14 @@
+:root 
+{
+  --number-color: 127, 255, 212;
+  --operator-color: 130, 210, 255;
+  --clear-color: 255, 99, 71;
+  --addition-color: 0, 120, 0;
+
+  --full: 1.0;
+  --half: 0.5;
+}
+
 * {
   box-sizing: border-box;
   font-size: 30px;
@@ -10,6 +21,7 @@
   }
 
   .calculator {
+    background-color: cadetblue;
     border: 2px solid grey;
     border-radius: 8px;
     display: grid;
@@ -17,6 +29,17 @@
     justify-content: center;
     margin: 1rem;
     width: 360px;
+
+    .display {
+      @extend .calculator;
+      background-color: floralwhite;
+      font-size: 2em;
+      height: 120px;
+      justify-content: right;
+      margin: 20px 20px 0 20px;
+      padding: 0.5em 0.2em 0;
+      width: 320px
+    }
     
     .keypad {
       display: grid;
@@ -25,30 +48,31 @@
       height: 398px;
       margin: 0 auto;
       width: 316px;
-
-      .key {
+      
+      button {
         @extend .calculator;
         height: 70px;
         margin: 0;
         width: 70px;
-      }
+        &[data-action] {
+          background-color: #{'rgba(var(--operator-color))'};
+        }  
+        &[data-action="clear"] {
+          background-color: #{'rgba(var(--clear-color))'};
+        }
 
-      .key[data-action="add"] {
-        height: 152px;
-        grid-column: 4/5;
-        grid-row: 4/6;
-      }
+        &[data-action="add"] {
+          background-color: #{'rgba(var(--addition-color))'};
+          grid-column: 4/5;
+          grid-row: 4/6;
+          height: 152px;
+          &:hover {
+            background: linear-gradient( to top, rgba(217, 255, 0, 0.25), rgba(255, 255, 255, 0.25)) #{'rgba(var(--addition-color))'};
+          }
+        }
+        .is-pressed {
+          background-color: red;
+        }
+      } 
     }  
-    
-    .display {
-      @extend .calculator;
-      height: 120px;
-      margin: 20px 20px 0 20px;
-      width: 320px;
-      
-      #textarea {
-        text-align: right;
-        width: 300px;
-      }
-    }
   }

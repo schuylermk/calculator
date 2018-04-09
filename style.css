@@ -1,3 +1,11 @@
+:root {
+  --number-color: 127, 255, 212;
+  --operator-color: 130, 210, 255;
+  --clear-color: 255, 99, 71;
+  --addition-color: 0, 120, 0;
+  --full: 1.0;
+  --half: 0.5; }
+
 * {
   box-sizing: border-box;
   font-size: 30px; }
@@ -7,7 +15,8 @@ header {
   font-size: 1.25rem;
   margin: 1rem; }
 
-.calculator, .calculator .keypad .key, .calculator .display {
+.calculator, .calculator .display, .calculator .keypad button {
+  background-color: cadetblue;
   border: 2px solid grey;
   border-radius: 8px;
   display: grid;
@@ -15,27 +24,37 @@ header {
   justify-content: center;
   margin: 1rem;
   width: 360px; }
-  .calculator .keypad, .calculator .keypad .key .keypad {
+  .calculator .display, .calculator .keypad button .display {
+    background-color: floralwhite;
+    font-size: 2em;
+    height: 120px;
+    justify-content: right;
+    margin: 20px 20px 0 20px;
+    padding: 0.5em 0.2em 0;
+    width: 320px; }
+  .calculator .keypad, .calculator .keypad button .keypad {
     display: grid;
     grid-gap: 12px;
     grid-template-columns: repeat(4, 1fr);
     height: 398px;
     margin: 0 auto;
     width: 316px; }
-    .calculator .keypad .key {
+    .calculator .keypad button {
       height: 70px;
       margin: 0;
       width: 70px; }
-    .calculator .keypad .key[data-action="add"] {
-      height: 152px;
-      grid-column: 4/5;
-      grid-row: 4/6; }
-  .calculator .display, .calculator .keypad .key .display {
-    height: 120px;
-    margin: 20px 20px 0 20px;
-    width: 320px; }
-    .calculator .display #textarea {
-      text-align: right;
-      width: 300px; }
+      .calculator .keypad button[data-action] {
+        background-color: rgba(var(--operator-color)); }
+      .calculator .keypad button[data-action="clear"] {
+        background-color: rgba(var(--clear-color)); }
+      .calculator .keypad button[data-action="add"] {
+        background-color: rgba(var(--addition-color));
+        grid-column: 4/5;
+        grid-row: 4/6;
+        height: 152px; }
+        .calculator .keypad button[data-action="add"]:hover {
+          background: linear-gradient(to top, rgba(217, 255, 0, 0.25), rgba(255, 255, 255, 0.25)) rgba(var(--addition-color)); }
+      .calculator .keypad button .is-pressed {
+        background-color: red; }
 
 /*# sourceMappingURL=style.css.map */
